@@ -11,8 +11,8 @@ int main() {
 		boost::asio::io_service io_service;
 		//Use Resolver to change Domain's name as TCP Iterator
 		tcp::resolver resolver(io_service);
-		//Use localhost as Server, and daytime protocol as Servie
-		tcp::resolver::query query("localhost", "daytime");
+		//Use ngrok Domain and allocated public IP, so anyone can access Server anywhere
+		tcp::resolver::query query("0.tcp.ngrok.io", "14323");
 		//Get IP address and Port number through DNS
 		tcp::resolver::iterator endpoint_iterator = resolver.resolve(query);
 		//Initiate Socket and connect to Server
